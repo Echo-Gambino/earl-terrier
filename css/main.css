@@ -1,0 +1,93 @@
+/*body
+{
+	background-color: lightblue;
+}*/
+
+h1#greeter-clock
+{
+	color: blue;
+	font-size: 10vw;
+
+	text-align: center;
+
+	margin: 0.5%;
+}
+
+p#greeter-message
+{
+	color: green;
+	font-size: 2vw;
+
+	text-align: center;
+
+	margin-top: 0.5%;
+	margin-bottom: 0.5%;
+}
+
+div#content
+{
+	display: flex;
+
+	justify-content: center;
+}
+
+div#content > div
+{
+	width: 40%;
+
+	margin-left: 2%;
+	margin-right: 2%;
+
+}
+
+p
+{
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.leftLean
+{
+	text-align: left;
+}
+
+.rightLean
+{
+	text-align: right;
+}
+
+.testDR
+{
+	border-style: dotted;
+	border-color: red;
+}
+
+.testSR
+{
+	border-style: solid;
+	border-color: red;
+}
+
+.testDG 
+{
+	border-style: dotted;
+	border-color: green;
+}
+
+.testSG
+{
+	border-style: solid;
+	border-color: green;
+}
+
+.testDB
+{
+	border-style: dotted;
+	border-color: blue;
+}
+
+.testSB
+{
+	border-style: solid;
+	border-color: blue;
+}
