@@ -1,4 +1,4 @@
-import { gx, gc, GreeterController } from './greeter-controller.js';
+import { gx, GreeterController } from './greeter-controller.js';
 
 function init()
 {

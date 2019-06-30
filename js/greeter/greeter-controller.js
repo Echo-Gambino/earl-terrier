@@ -11,10 +11,14 @@
 
 export class GreeterController
 {
+	// A constructor for the given class,
+	// Automatically executes when "new <class>" is called
 	constructor()
 	{
 	}
 
+	// This ABSOLUTELY needs to be called as
+	// GreeterController.print(...);
 	static print(id, val)
 	{
 		if (val < 10)
@@ -29,12 +33,6 @@ export class GreeterController
 		return 9;
 	}
 
-}
-
-export function gc()
-{
-	var g = new GreeterController();
-	return g;
 }
 
 export function gx()
