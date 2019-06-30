@@ -1,22 +1,14 @@
-import { gx, GreeterController } from './greeter-controller.js';
+import { greeterController } from './greeter-controller.js';
+import { greeterModel } from './greeter-model.js';
+import { greeterView } from './greeter-view.js';
 
 function init()
 {
-	var y = gx();
+	var model = new greeterModel();
+	var view = new greeterView('hr', 'mn', 'sc');
+	var controller = new greeterController(model, view);
 
-	var g = new GreeterController();
-	y = g.getNine();
-
-	printx('mn', y);
-}
-
-function printx(id, val)
-{
-	if (val < 10)
-	{
-		val = '0' + val;
-	}
-	document.getElementById(id).innerHTML = val;
+	controller.initClock();
 }
 
 window.onload = init;
