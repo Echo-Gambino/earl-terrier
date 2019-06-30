@@ -3,10 +3,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/main.css">
+<!--<script type="module" src="./js/greeter/greeter-controller.js"></script>-->
+<script type="module" src="./js/greeter/greeter.js"></script>
 
 <body>
 	<div id="greeter" class="testDR">
-		<h1 id="greeter-clock">14:30</h1>
+		<h1 id="greeter-clock">
+			<span id="hr">--</span>
+			<span>:</span>
+			<span id="mn">--</span>
+			<span>:</span>
+			<span id="sc">--</span>
+		</h1>
 		<p id="greeter-message">Good Afternoon, Alphy.</p>
 	</div>
 

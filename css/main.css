@@ -1,28 +1,35 @@
-/*body
-{
-	background-color: lightblue;
-}*/
 
-h1#greeter-clock
-{
-	color: blue;
-	font-size: 10vw;
+/* start of greeter section */
 
+#greeter-clock
+{
 	text-align: center;
-
+	font-size: 0px;
 	margin: 0.5%;
 }
+
+#greeter-clock > span
+{
+	color: blue;
+
+	font-size: 5vw;
+
+	text-align: center;
+}
+
 
 p#greeter-message
 {
 	color: green;
-	font-size: 2vw;
+	font-size: 1.25vw;
 
 	text-align: center;
 
 	margin-top: 0.5%;
 	margin-bottom: 0.5%;
 }
+
+/* end of greeter section */
 
 div#content
 {
