@@ -53,7 +53,7 @@ export class greeterModel
 		this.second = 0;
 
 		this.hour = this.date.getHours();
-		this.minute = this.date.getHours();
+		this.minute = this.date.getMinutes();
 		this.second = this.date.getSeconds();
 	}
 
