@@ -20,100 +20,78 @@
 //   displaysHour
 //   displaysMinute
 //   displaySecond
-
+import { greeterViewClock } from './greeter-view-clock.js';
 
 export class greeterView
 {
-	constructor(hourText, minText, secText)
+	constructor(clock, message)
 	{
-		this.lastHour = -1;
-		this.lastMinute = -1;
-		this.lastSecond = -1;
-
-		this.hourText = hourText;
-		this.minText = minText;
-		this.secText = secText;
+		this.clock = clock;
+		this.message = message;
 	}
-
+	
 	displayAll(newHour, newMinute, newSecond, force)
 	{
-		// console.log("--------\n");
-		// console.log(newHour + '\n');
-		// console.log(newMinute + '\n');
-		// console.log(newSecond + '\n');
-		this.displayHour(newHour, force);
-		this.displayMinute(newMinute, force);
-		this.displaySecond(newSecond, force);
+		var updatedHr = this.displayHour(newHour, force);
+		var updatedMn = this.displayMinute(newMinute, force);
+		var updatedSc = this.displaySecond(newSecond, force);
+		
+		if (updatedHr) this.updateViewMessage(newHour);
+		
+		return (updatedHr || updatedMn || updatedSc);
 	}
 
 	displayHour(newHour, force)
 	{
-		var u = this.update(
-			this.hourText,
-			newHour,
-			this.lastHour,
-			force
-		);
-
-		if (u)
-		{
-			this.lastHour = newHour;
-		}
+		return this.clock.displayHour(newHour, force);
 	}
 
 	displayMinute(newMinute, force)
 	{
-		var u = this.update(
-			this.minText,
-			newMinute,
-			this.lastMinute,
-			force
-		);
-
-		if (u)
-		{
-			this.lastMinute = newMinute;
-		}
+		return this.clock.displayMinute(newMinute, force);
 	}
 
 	displaySecond(newSecond, force)
 	{
-		var u = this.update(
-			this.secText,
-			newSecond,
-			this.lastSecond,
-			force
-		);
-
-		if (u)
-		{
-			this.lastSecond = newSecond;
-		}
+		return this.clock.displaySecond(newSecond, force);
 	}
-
-	update(id, newVal, oldVal, force)
+	
+	updateViewMessage(hour)
 	{
-		var u = (Boolean(oldVal !== newVal) && Boolean(force));
-
-		if (u)
+		var numHour = parseInt(hour, 10);
+		
+		if (this.isMorning(numHour))
 		{
-			this.display(id, newVal);
+			this.message.setTimeMorning();
 		}
-
-		return u;
+		else if (this.isAfternoon(numHour))
+		{
+			this.message.setTimeAfternoon();
+		}
+		else if (this.isEvening(numHour))
+		{
+			this.message.setTimeEvening();
+		}
 	}
-
-	display(id, val)
+	
+	isMorning(hour)
 	{
-		console.log(id);
-
-		if (val < 10)
-		{
-			val = '0' + val;
-		}
-		document.getElementById(id).innerHTML = val;
+		var bool = Boolean((3 <= hour) && (hour <= 11));
+		return bool;
 	}
-
+	
+	isAfternoon(hour)
+	{
+		var bool = Boolean((12 <= hour) && (hour <= 16));
+		return bool;
+	}
+	
+	isEvening(hour)
+	{
+		var bool = Boolean((17 <= hour) && (hour <= 24)) || Boolean((0 <= hour) && (hour <= 2));
+		return bool;
+	}
+	
 }
 
 
