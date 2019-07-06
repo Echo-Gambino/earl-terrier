@@ -32,6 +32,8 @@
 //   setHour
 //
 
+import { greeterModelMessage } from './greeter-model-message.js';
+
 function modulo(x, mod)
 {
 	if (x >= mod)
@@ -55,7 +57,6 @@ function readFile(file)
 			if (rawFile.status === 200 || rawFile.status === 0)
 			{
 				text = rawFile.responseText;
-				// alert("<" + text + ">");
 			}
 		}
 	
@@ -63,35 +64,6 @@ function readFile(file)
 	rawFile.send(null);
 
 	return text;
-}
-
-function readLine(text, startIndex)
-{
-	if (startIndex >= text.length) 
-	{
-		throw new "(startIndex >= text.length) "
-		+ "IN <function> readLine(...)";
-	}
-
-	var line = "";
-	var index = startIndex;
-
-	for (index = 0; index < text.length; index++)
-	{
-		if (text[index] === "\n") {break;}
-
-		line += text[index];
-	}
-
-	return line;
-}
-
-function parseForUsername(text)
-{
-	// current convention of username is be in the first line of the config.txt file
-	var firstLine = readLine(text, 0);
-
-	return firstLine;
 }
 
 function isString(variable)
@@ -105,8 +77,10 @@ function isString(variable)
 
 export class greeterModel
 {
-	constructor()
+	constructor(modelMessage)
 	{
+		this.mMessage = modelMessage;
+
 		this.date = new Date();
 
 		this.hour = 0;
@@ -152,15 +126,14 @@ export class greeterModel
 	{
 		var text = readFile("./config/config.txt");
 
-		var username = parseForUsername(text);
+		var username = this.mMessage.getUsernameFromText(text);
 
-		// Check if username is a string or not
 		if (!isString(username))
 		{
 			return false;
 		}
 
-		this.setUsername(username);
+		this.mMessage.setUsername(username);
 
 		return true;
 	}
@@ -182,7 +155,7 @@ export class greeterModel
 
 	getUsername()
 	{
-		return this.username;
+		return this.mMessage.getUsername();
 	}
 
 	setHour(hour)
@@ -202,12 +175,7 @@ export class greeterModel
 
 	setUsername(username)
 	{
-		if (!isString(username)) // (typeof username === 'string' || username instanceof String)
-		{
-			throw "(username is not a string) IN <function> setUsername(...) <- <class> greeterModel"
-		}
-		
-		this.username = username;
+		this.mMessage.setUsername(username);
 	}
 
 }
