@@ -15,7 +15,8 @@ function init()
 	var view = new greeterView(viewClock, viewMessage);
 	
 	var controller = new greeterController(model, view);
-	
+
+	controller.loadUsername();
 	controller.initClock();
 }
 

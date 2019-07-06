@@ -30,6 +30,23 @@ export class greeterController
 		this._animate;
 	}
 
+	loadUsername()
+	{
+		var loadSuccess = this._gModel.tryLoadUsername();
+
+		if (loadSuccess)
+		{
+			var username = this._gModel.getUsername();
+			this._gView.displayUsername(username);
+		}
+		else
+		{
+			throw new "(username is not string) "
+				+ "IN if (!isString(username) {...} "
+				+ "<- tryLoadUsername()";
+		}
+	}
+
 	initClock()
 	{
 		this._haltClock = false;

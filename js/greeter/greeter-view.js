@@ -21,6 +21,7 @@
 //   displaysMinute
 //   displaySecond
 import { greeterViewClock } from './greeter-view-clock.js';
+import { greeterViewMessage } from './greeter-view-message.js';
 
 export class greeterView
 {
@@ -54,6 +55,11 @@ export class greeterView
 	displaySecond(newSecond, force)
 	{
 		return this.clock.displaySecond(newSecond, force);
+	}
+
+	displayUsername(username)
+	{
+		return this.message.setUsername(username);	
 	}
 	
 	updateViewMessage(hour)

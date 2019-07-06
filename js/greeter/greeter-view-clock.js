@@ -77,7 +77,7 @@ export class greeterViewClock
 
 	display(id, val)
 	{
-		console.log(id);
+		// console.log(id);
 		
 		if (val < 10)
 		{

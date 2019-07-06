@@ -32,10 +32,13 @@ export class greeterViewMessage
 		document.getElementById(this.timeText).innerHTML = time;
 	}
 	
-	setName(username)
+	setUsername(username)
 	{
+		if (!(typeof username === 'string' || username instanceof String))
+		{
+			return;
+		}
 		document.getElementById(this.nameText).innerHTML = username;
 	}
-	
 	
 }
