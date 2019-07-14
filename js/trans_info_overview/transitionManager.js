@@ -2,28 +2,28 @@
 export class transitionManager
 {
 	constructor(
-		bTransToInfo,
-		gGreeterName
+		overviewToInfo,
+		infoToOverview
 	)
 	{
-		this._tToInfo = document.getElementById(bTransToInfo);
-		this._greeter = document.getElementById(gGreeterName);
+		this._overviewToInfo = overviewToInfo;
+		this._infoToOverview = infoToOverview;
+	}
 
-		this._tToInfo.onclick = function() 
-		{ 
-			this.TransitionToInfo(); 
+	SetButton_ToInfo(button)
+	{
+		button.onclick = function()
+		{
+			this._overviewToInfo();
 		}.bind(this);
 	}
 
-	TransitionToInfo()
+	SetButton_ToOverview(button)
 	{
-		this._greeter.classList.add('Info');
-		this._tToInfo.classList.add('Info');
-	}
-
-	TransitionToOverview()
-	{
-		this._greeter.classList.add('Overview');
+		button.onclick = function()
+		{
+			this._infoToOverview();
+		}.bind(this);
 	}
 
 }
