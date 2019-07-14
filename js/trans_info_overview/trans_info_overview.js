@@ -28,12 +28,16 @@ export function init()
 
 	// -----
 	var buttonOverviewDiv = document.getElementById('button-overview');
+	
+	var sectionInfo = document.getElementById('section-info');
 
 	var tranInfo = function(startClass, finalClass)
 	{
 		buttonOverviewDiv.classList.remove(startClass);
+		sectionInfo.classList.remove(startClass);
 
 		buttonOverviewDiv.classList.add(finalClass);
+		sectionInfo.classList.add(finalClass);
 	}
 
 	var hideInfo = function()

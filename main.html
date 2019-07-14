@@ -29,7 +29,8 @@
 
 <body>
 	
-	<div id="greeter">
+	<!-- Greeter section to display time and a pleasing message -->
+	<div id="greeter" class="Overview">
 		<h1 id="greeter-clock">
 			<span id="hr">--</span>
 			<span>:</span>
@@ -43,20 +44,29 @@
 		</p>
 	</div>
 
-	<div id="button-info" class="Overview">
+	<div id="section-info" >
 
-		<button id="button-goto-info">
-			Notes &amp; Issues
-		</button>
+		<div id="section-issues"></div>
+
+		<div id="section-notes"></div>
 
 	</div>
 
-	<div id="button-overview" class="Overview">
+	<div id="spacer"></div>
 
+
+	<!-- Button to transition to info -->
+	<div id="button-info" class="Overview">
+		<button id="button-goto-info">
+			Notes &amp; Issues
+		</button>
+	</div>
+
+	<!-- Button to transition to overview -->
+	<div id="button-overview" class="Overview">
 		<button id="button-goto-overview">
 			Overview
 		</button>
-
 	</div>
 
 </body>

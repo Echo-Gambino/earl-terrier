@@ -1,9 +1,22 @@
 
 #greeter.Overview
 {
-	top: 15%;
+	margin-top: 15%;
 }
 
+#section-info.Overview
+{
+	height: 0%;
+}
+/*
+@media screen and (max-width: 1000px)
+{
+	#section-info.Overview
+	{
+		height: 0%;
+	}
+}
+*/
 #button-info.Overview
 {
 	bottom: 0em;
