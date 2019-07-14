@@ -7,7 +7,7 @@ import { greeterModelMessage } from './greeter-model-message.js';
 import { greeterViewClock } from './greeter-view-clock.js';
 import { greeterViewMessage } from './greeter-view-message.js';
 
-function init()
+export function init()
 {
 	var modelMessage = new greeterModelMessage();
 	var model = new greeterModel(modelMessage);
@@ -22,8 +22,6 @@ function init()
 	controller.loadUsername();
 	controller.initClock();
 }
-
-window.onload = init;
 
 
 

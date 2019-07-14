@@ -23,26 +23,65 @@
 
 body 
 {
+	position: fixed;
+
+	margin: 0%;
+	padding: 0%;
+
+	width: 100%;
+	height: 100%;
+
     background: none;
     font-family: "Monospace";
     font-weight: bold;
     color: white;
-    text-shadow: 0px 2px #CCCCCC
+    text-shadow: 0px 1px #CCCCCC
 }
 
 /* start of greeter section */
 
 #greeter
 {
+	position: fixed;
+
 	text-align: center;
+
+	left: 0;
+
+	top: 15%;
+
+	width: 100%;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+
 	font-size: 0px;
 	
-	margin-top: 15%;
+}
+
+#greeter.Info
+{
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-ms-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	top: 0%;
+}
+
+#greeter.Overview
+{
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-ms-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	top: 15%;
 }
 
 #greeter-clock
 {
-	margin: 0.5%;
+	margin: 0.1%;
 }
 
 #greeter-clock > span
@@ -53,7 +92,7 @@ body
 
 #greeter-message
 {
-	margin: 0.5%;
+	margin: 0.1%;
 }
 
 #greeter-message > span
@@ -71,7 +110,7 @@ body
         text-align: center;
     }
 
-    p#greeter-message
+    #greeter-message > span
     {
         font-size: 5vw;
     }
@@ -79,69 +118,61 @@ body
 
 /* end of greeter section */
 
-div#content
-{
-	display: flex;
+/* start of button-info section */
 
-	justify-content: center;
+#button-info
+{
+	position: fixed;
+
+	text-align: center;
+
+	left: 0px;
+	bottom: 0px;
+
+	width: 100%;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+
 }
 
-div#content > div
+#button-info.Info
 {
-	width: 40%;
-
-	margin-left: 2%;
-	margin-right: 2%;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
+	transition: 0.4s;
+	bottom: -5em;
 }
 
-p
+#button-info.Overview
 {
-	margin-top: 1%;
-	margin-bottom: 1%;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
+	transition: 0.4s;
+	bottom: 0em;
 }
 
-.leftLean
+#button-goto-info
 {
-	text-align: left;
+	border-radius: 4px;
+
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+
+	background-color: black;
+	color: white;
+	border: 2px solid #f44336;
 }
 
-.rightLean
+#button-goto-info:hover
 {
-	text-align: right;
+	background-color: #f44336;
+	color: black;
 }
 
-.testDR
-{
-	border-style: dotted;
-	border-color: red;
-}
+/* end of button-info section */
 
-.testSR
-{
-	border-style: solid;
-	border-color: red;
-}
-
-.testDG 
-{
-	border-style: dotted;
-	border-color: green;
-}
-
-.testSG
-{
-	border-style: solid;
-	border-color: green;
-}
-
-.testDB
-{
-	border-style: dotted;
-	border-color: blue;
-}
-
-.testSB
-{
-	border-style: solid;
-	border-color: blue;
-}
