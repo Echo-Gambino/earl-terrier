@@ -114,7 +114,7 @@ body
 
 #section-info
 {
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 
 	display: flex;
 
@@ -132,7 +132,7 @@ body
 
 #section-issues
 {
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 
 	margin-left: 5%;
 	margin-right: 5%;;
@@ -142,7 +142,7 @@ body
 
 #section-notes
 {
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 
 }
 
