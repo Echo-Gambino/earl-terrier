@@ -1,0 +1,54 @@
+
+body
+{
+	font-family: "Monospace";
+	font-weight: bold;
+	
+	/*text-shadow: 0px 1px #CCCCCC;*/
+
+	border: 1px solid red;
+}
+
+#notes-container
+{
+	border: 5px solid orange;
+}
+
+.notes-item-container
+{
+	border: 5px solid lightblue;
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	margin-top: 2.5px;
+	margin-bottom: 2.5px;
+}
+
+.notes-item-header
+{
+	/*border: 2px solid orange;*/
+}
+
+.notes-item-header > h3
+{
+	margin: 0%;
+}
+
+.notes-item-body
+{
+	/*border: 2px solid lightgreen;*/
+}
+
+.notes-item-body > p
+{
+	margin: 0%;
+}
+
+.notes-item-gutter
+{
+	/*border: 2px solid lightpink;*/
+}
