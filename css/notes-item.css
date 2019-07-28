@@ -4,8 +4,6 @@ body
 	font-family: "Monospace";
 	font-weight: bold;
 	
-	/*text-shadow: 0px 1px #CCCCCC;*/
-
 	border: 1px solid red;
 }
 
@@ -18,8 +16,8 @@ body
 {
 	border: 5px solid lightblue;
 
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 	padding-left: 10px;
 	padding-right: 10px;
@@ -31,11 +29,26 @@ body
 .notes-item-header
 {
 	/*border: 2px solid orange;*/
+
+	display: flex;
+
 }
 
 .notes-item-header > h3
 {
 	margin: 0%;
+
+	flex-grow: 8;
+}
+
+.notes-item-header > button
+{
+	text-decoration: none;
+
+	border: none;
+
+	background-color: dodgerblue;
+
 }
 
 .notes-item-body
@@ -46,9 +59,39 @@ body
 .notes-item-body > p
 {
 	margin: 0%;
+
+	overflow-y: auto;
+
+	max-height: 10em;
 }
 
 .notes-item-gutter
 {
 	/*border: 2px solid lightpink;*/
+
+	margin-top: 10px;
+
 }
+
+#buttons-container
+{
+	
+	display: flex;
+	border: 1px solid green;
+
+	margin-left: -10px;
+	margin-right: -10px;
+
+}
+
+#buttons-container > button
+{
+
+	margin-left: 10px;
+	margin-right: 10px;
+
+	background-color: dodgerblue;
+
+}
+
+
